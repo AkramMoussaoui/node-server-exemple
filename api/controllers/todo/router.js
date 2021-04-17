@@ -1,5 +1,7 @@
 const express = require("express");
 const todoController = require("./controller");
+const todoSchema = require("../../../validators/todo");
+const validate = require("../../../validators/validate");
 
 const todoRouter = express.Router();
 
@@ -7,7 +9,7 @@ todoRouter.get("/:id", todoController.getTodoByID);
 
 todoRouter.get("/", todoController.getTodos);
 
-todoRouter.post("/", todoController.addTodo);
+todoRouter.post("/", validate(todoSchema.postTodo), todoController.addTodo);
 
 todoRouter.put("/:id", todoController.updateTodo);
 
