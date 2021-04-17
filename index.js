@@ -16,6 +16,4 @@ const PORT = process.env.PORT || 2000;
 
 app.use("/todo", todoRouter);
 
-app.delete("/:id", (req, res) => {});
-
 app.listen(PORT, () => console.log("Listening on http://localhost:" + PORT));
