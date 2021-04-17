@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(morgan('combined'));
 app.use(helmet());
 app.use(cors());
+
 // app.use((req, res, next) => {
 //   const time = new Date().getHours();
 //   if (time > 10 || time < 8) {
